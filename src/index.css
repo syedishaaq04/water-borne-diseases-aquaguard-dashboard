@@ -1,0 +1,81 @@
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Inter font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Base styles */
+@layer base {
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+  body {
+    @apply bg-dashboard-background text-dashboard-text antialiased;
+  }
+  html, body, #root {
+    @apply h-full;
+  }
+}
+
+@layer components {
+  .health-card {
+    @apply bg-dashboard-card rounded-lg shadow-health-card border border-dashboard-border p-6 transition-all duration-200 hover:shadow-health-card-hover;
+  }
+  .metric-card {
+    @apply health-card flex items-center justify-between;
+  }
+  .alert-banner {
+    @apply px-4 py-3 rounded-lg text-sm font-medium border;
+  }
+  .alert-safe {
+    @apply alert-banner bg-health-safe-50 text-health-safe-700 border-health-safe-200;
+  }
+  .alert-caution {
+    @apply alert-banner bg-health-caution-50 text-health-caution-700 border-health-caution-200;
+  }
+  .alert-danger {
+    @apply alert-banner bg-health-danger-50 text-health-danger-700 border-health-danger-200;
+  }
+  .btn-primary {
+    @apply px-4 py-2 bg-northeast-primary text-white rounded-md font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply px-4 py-2 bg-dashboard-background text-dashboard-text border border-dashboard-border rounded-md font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+}
+
+/* Scrollbar */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E0 #F8FAFC;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+/* Animation */
+@keyframes healthPulse {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.7; }
+}
+.health-pulse {
+  animation: healthPulse 2s infinite;
+}
+
+/* Focus style */
+.focus-visible {
+  @apply ring-2 ring-blue-500 ring-offset-2 outline-none;
+}
