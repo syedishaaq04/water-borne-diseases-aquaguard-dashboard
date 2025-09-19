@@ -24,9 +24,9 @@ type FormData = {
   coliform_fecal: number
 }
 
-export const OutbreakPrediction: React.FC = () => {
+export const OutbreakPredictionPage: React.FC = () => {
   const { register, handleSubmit } = useForm<FormData>()
-  const [prediction, setPrediction] = useState<OutbreakPrediction | null>(null)
+  const [prediction, setPrediction] = useState<OutbreakPrediction | null>(null) // ✅ Now this works
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 

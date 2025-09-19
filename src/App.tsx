@@ -5,7 +5,7 @@ import { Layout } from './components/Layout/Layout'
 import { Dashboard } from './pages/Dashboard'
 import { WaterQuality } from './pages/WaterQuality'
 import { HealthSurveillance } from './pages/HealthSurveillance'
-import { OutbreakPrediction } from './pages/OutbreakPrediction' // Ensure this is your updated dynamic component
+import { OutbreakPredictionPage } from './pages/OutbreakPredictionPage' // Ensure this is your updated dynamic component
 import { ASHAPortal } from './pages/ASHAPortal'
 import { Reports } from './pages/Reports'
 import { Settings } from './pages/Settings'
@@ -59,7 +59,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/water-quality" element={<WaterQuality />} />
             <Route path="/health-cases" element={<HealthSurveillance />} />
-            <Route path="/outbreak-prediction" element={<OutbreakPrediction />} />
+            <Route path="/outbreak-prediction" element={<OutbreakPredictionPage />} />
 
             {/* User-specific routes */}
             <Route path="/asha-portal" element={<ASHAPortal />} />
