@@ -70,7 +70,7 @@ function App() {
             {/* Detailed view routes */}
             <Route path="/water-quality/:sensorId" element={<WaterQuality />} />
             <Route path="/health-cases/:caseId" element={<HealthSurveillance />} />
-            <Route path="/outbreak/:predictionId" element={<OutbreakPrediction />} />
+            <Route path="/outbreak/:predictionId" element={<OutbreakPredictionPage />} />
 
             {/* Fallback route */}
             <Route

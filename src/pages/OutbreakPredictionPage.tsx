@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { getOutbreakPrediction, OutbreakPrediction } from '../services/api'
+import { getOutbreakPrediction } from '../services/api'
+import type { OutbreakPrediction } from '../services/api'
+
+
 
 type FormData = {
   state: string
@@ -26,7 +29,7 @@ type FormData = {
 
 export const OutbreakPredictionPage: React.FC = () => {
   const { register, handleSubmit } = useForm<FormData>()
-  const [prediction, setPrediction] = useState<OutbreakPrediction | null>(null) // ✅ Now this works
+  const [prediction, setPrediction] = useState<OutbreakPrediction | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -36,7 +39,7 @@ export const OutbreakPredictionPage: React.FC = () => {
       setError(null)
       const result = await getOutbreakPrediction(data)
       setPrediction(result)
-    } catch {
+    } catch (err) {
       setError('Failed to get prediction from server.')
       setPrediction(null)
     } finally {
@@ -52,7 +55,6 @@ export const OutbreakPredictionPage: React.FC = () => {
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-4 mb-6">
-        {/* Controlled inputs for all parameters */}
         <input {...register('state', { required: true })} placeholder="State" className="input" />
         <input {...register('district', { required: true })} placeholder="District" className="input" />
         <input {...register('season', { required: true })} placeholder="Season (Pre-monsoon/Post-monsoon)" className="input" />

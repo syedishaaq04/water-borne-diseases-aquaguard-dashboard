@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { getWaterQualityReadings, WaterQualityReading } from '../services/api'
+import { getWaterQualityReadings } from '../services/api'
+import type { WaterQualityReading } from '../services/api'
+
 
 export const Dashboard: React.FC = () => {
   const [readings, setReadings] = useState<WaterQualityReading[]>([])
