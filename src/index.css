@@ -44,6 +44,18 @@
   .btn-secondary {
     @apply px-4 py-2 bg-dashboard-background text-dashboard-text border border-dashboard-border rounded-md font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
   }
+  .form-group {
+    @apply mb-4;
+  }
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+  select.input {
+    @apply bg-white cursor-pointer;
+  }
+  select.input:disabled {
+    @apply bg-gray-100 cursor-not-allowed text-gray-500;
+  }
 }
 
 /* Scrollbar */
